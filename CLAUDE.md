@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a personal Neovim configuration built on [LazyVim](https://lazyvim.org) with lazy.nvim as the plugin manager.
+This is a personal Neovim configuration built on [LazyVim](https://www.lazyvim.org) with lazy.nvim as the plugin manager. LazyVim docs: https://www.lazyvim.org/
 
 ## Commands
 
@@ -31,6 +31,26 @@ stylua --check lua/
 
 ### Plugin overrides (`lua/plugins/`)
 Every `.lua` file here is auto-loaded by lazy.nvim. Files return a list of plugin specs that add, disable, or override LazyVim defaults. `example.lua` is disabled via `if true then return {} end` at the top — it's a reference template only.
+
+**Merging rules** (LazyVim applies these when merging with defaults):
+- `cmd`, `event`, `ft`, `keys`, `dependencies` — **appended** to existing values
+- `opts` — **deep-merged** with defaults (use a function to replace entirely)
+- All other spec properties — **override** the default
+
+**Common patterns:**
+```lua
+-- Disable a plugin
+{ "plugin/name", enabled = false }
+
+-- Add options on top of defaults
+{ "plugin/name", opts = { my_option = true } }
+
+-- Replace all opts
+{ "plugin/name", opts = function() return { my_option = true } end }
+
+-- Disable a keymap
+{ "plugin/name", keys = { { "<leader>x", false } } }
+```
 
 ### LazyVim extras (`lazyvim.json`)
 Enabled extras (managed via `:LazyExtras` UI):
