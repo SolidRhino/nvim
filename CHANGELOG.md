@@ -5,6 +5,7 @@ All notable changes to this Neovim configuration will be documented here.
 ## 🌿 Latest
 ### ⚙️ CI
 - Add changelog workflow, dependabot, and auto-merge
+- Add stylua lint workflow
 
 ### 📚 Documentation
 - Add CLAUDE.md with project guidance for Claude Code
