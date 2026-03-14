@@ -21,6 +21,7 @@ All notable changes to this Neovim configuration will be documented here.
 - Update Serena memory with fish-lsp install and util.dot notes
 - Update Serena memories with shell.lua, blade.lua, and updated extras list
 - Update lazy-lock.json
+- Update Serena memories with CI workflows and changelog setup
 
 ### 🚀 Features
 - Initial nvim config (LazyVim)
