@@ -3,12 +3,16 @@
 All notable changes to this Neovim configuration will be documented here.
 
 ## 🌿 Latest
+### ⚙️ CI
+- Add changelog workflow, dependabot, and auto-merge
+
 ### 📚 Documentation
 - Add CLAUDE.md with project guidance for Claude Code
 - Update CLAUDE.md with LazyVim URL, merging rules, and common patterns
 - Add nvim config improvements design spec
 - Update nvim improvements spec with review fixes
 - Add nvim config improvements implementation plan
+- Add cliff.toml and generate CHANGELOG.md
 
 ### 🔧 Miscellaneous
 - Update lazy-lock.json
