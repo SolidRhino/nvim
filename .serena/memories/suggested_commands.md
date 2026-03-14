@@ -28,3 +28,18 @@ git commit -m "..."
 1. Run `stylua --check lua/` to verify formatting
 2. If formatting fails, run `stylua lua/` to fix
 3. Commit changed files (never include Co-Authored-By lines)
+
+## Manual Tool Installs
+
+### fish-lsp (not in Mason as of March 2026)
+
+```sh
+npm install -g fish-lsp
+```
+
+Required for Fish shell LSP support. Check https://github.com/mason-org/mason-lspconfig.nvim/issues/435 for Mason availability updates.
+
+## Notes
+
+- `util.dot` extra provides: bashls (LSP), shellcheck (Mason), fish treesitter parser
+  → Do not duplicate these in custom plugin specs
