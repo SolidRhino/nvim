@@ -24,6 +24,14 @@ git add lua/ lazyvim.json lazy-lock.json
 git commit -m "..."
 ```
 
+## Changelog
+```sh
+# Regenerate CHANGELOG.md manually (CI does this automatically on push)
+git-cliff -o CHANGELOG.md
+```
+Note: `git-cliff` is installed via Cargo. CI auto-updates CHANGELOG.md on every push to main.
+Tagging is automatic: weekly (Mondays) or on breaking change commits (`feat!:`, `fix!:`, etc.).
+
 ## Task Completion Checklist
 1. Run `stylua --check lua/` to verify formatting
 2. If formatting fails, run `stylua lua/` to fix

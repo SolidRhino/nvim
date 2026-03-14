@@ -25,8 +25,19 @@ lua/plugins/              # custom plugin specs (auto-loaded by lazy.nvim)
   go.lua                  # ray-x/go.nvim (Go extras)
   laravel.lua             # adalessa/laravel.nvim (PHP/Laravel)
   editor.lua              # nvim-ufo (folding) + diffview.nvim
+  shell.lua               # bash=shfmt formatter + fish-lsp (guarded)
+  blade.lua               # tree-sitter-blade parser + .blade.php filetype
   example.lua             # disabled reference template
 lazyvim.json              # enabled LazyVim extras (edit via :LazyExtras)
 lazy-lock.json            # plugin lockfile
 stylua.toml               # formatter config
+cliff.toml                # git-cliff changelog config
+CHANGELOG.md              # auto-generated (do not edit manually)
+queries/blade/            # treesitter query files for Blade templates
+.github/
+  dependabot.yml          # weekly action updates
+  workflows/
+    changelog.yml         # auto-generates CHANGELOG.md + date tags on push
+    lint.yml              # stylua check on push/PR
+    dependabot-auto-merge.yml
 ```
