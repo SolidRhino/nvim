@@ -4,10 +4,10 @@
 - **AI**: claudecode, copilot
 - **Coding**: mini-surround, yanky
 - **Editor**: dial, harpoon2, inc-rename, mini-files, overseer
-- **Languages**: ansible, docker, git, go, json, markdown, nix, php, python, rust, sql, svelte, tailwind, typescript, vue, yaml
+- **Languages**: docker, git, go, json, markdown, php, python, sql, tailwind, typescript, vue, yaml
 - **Testing**: test.core
 - **UI**: mini-animate
-- **Utilities**: chezmoi, dot, gh, mini-hipatterns, vscode
+- **Utilities**: chezmoi, dot, gh, mini-hipatterns, rest, vscode
 
 ## Custom Plugin Specs (lua/plugins/)
 
@@ -34,3 +34,14 @@ PHP/Laravel: artisan commands, route navigation, related files.
 
 **diffview.nvim** (`sindrets/diffview.nvim`): enhanced git diff UI
 - Keymaps: `<leader>gD` open diff, `<leader>gH` file history
+
+### shell.lua
+Shell script support (adds what LazyVim/util.dot don't cover):
+- `conform.nvim`: adds `bash = { "shfmt" }` formatter (LazyVim covers sh/fish already)
+- `nvim-lspconfig`: enables `fish_lsp` if `fish-lsp` binary is in PATH (guarded with `vim.fn.executable`)
+- Note: `util.dot` provides bashls, shellcheck, fish treesitter — do not duplicate
+
+### blade.lua — Blade template support
+- Registers `EmranMR/tree-sitter-blade` external parser via direct table assignment in nvim-treesitter opts
+- `vim.filetype.add` maps `*.blade.php` → `blade` filetype in init
+- Query files: `queries/blade/highlights.scm` + `queries/blade/injections.scm` (PHP, JS/Alpine/Livewire injections)
