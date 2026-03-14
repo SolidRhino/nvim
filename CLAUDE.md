@@ -1,67 +1,23 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
+For detailed conventions, plugin specs, and workflows, read Serena project memories.
 
 ## Overview
 
-This is a personal Neovim configuration built on [LazyVim](https://www.lazyvim.org) with lazy.nvim as the plugin manager. LazyVim docs: https://www.lazyvim.org/
+Personal Neovim configuration built on [LazyVim](https://www.lazyvim.org) with lazy.nvim as the plugin manager.
 
 ## Commands
 
-Format Lua files (uses `stylua.toml`: 2-space indent, 120 column width):
 ```sh
-stylua lua/
-```
-
-Check formatting without writing:
-```sh
-stylua --check lua/
+~/.local/share/nvim/mason/bin/stylua lua/          # format Lua files
+~/.local/share/nvim/mason/bin/stylua --check lua/  # check without writing (2-space indent, 120 col width)
 ```
 
 ## Architecture
 
-### Entry point
-`init.lua` bootstraps lazy.nvim, which loads `lua/config/lazy.lua`.
-
-### Configuration files (`lua/config/`)
-- `lazy.lua` — plugin manager setup; defines the plugin spec (LazyVim base + `lua/plugins/`)
-- `options.lua` — custom vim options (loaded before lazy.nvim startup)
-- `keymaps.lua` — custom keymaps (loaded on `VeryLazy` event)
-- `autocmds.lua` — custom autocommands (loaded on `VeryLazy` event)
-
-### Plugin overrides (`lua/plugins/`)
-Every `.lua` file here is auto-loaded by lazy.nvim. Files return a list of plugin specs that add, disable, or override LazyVim defaults. `example.lua` is disabled via `if true then return {} end` at the top — it's a reference template only.
-
-**Merging rules** (LazyVim applies these when merging with defaults):
-- `cmd`, `event`, `ft`, `keys`, `dependencies` — **appended** to existing values
-- `opts` — **deep-merged** with defaults (use a function to replace entirely)
-- All other spec properties — **override** the default
-
-**Common patterns:**
-```lua
--- Disable a plugin
-{ "plugin/name", enabled = false }
-
--- Add options on top of defaults
-{ "plugin/name", opts = { my_option = true } }
-
--- Replace all opts
-{ "plugin/name", opts = function() return { my_option = true } end }
-
--- Disable a keymap
-{ "plugin/name", keys = { { "<leader>x", false } } }
-```
-
-### LazyVim extras (`lazyvim.json`)
-Enabled extras (managed via `:LazyExtras` UI):
-- **AI**: copilot
-- **Coding**: yanky
-- **Editor**: dial, inc-rename
-- **Languages**: ansible, docker, git, go, php
-- **Testing**: test.core
-- **Utilities**: chezmoi, dot, mini-hipatterns
-
-To add/remove extras, use `:LazyExtras` inside Neovim — this updates `lazyvim.json` automatically.
-
-### Plugin lock file
-`lazy-lock.json` pins exact plugin commits. Update plugins with `:Lazy update` in Neovim, then commit the updated lock file.
+- `init.lua` → `lua/config/lazy.lua` (bootstraps lazy.nvim)
+- `lua/config/` — options, keymaps, autocmds, lazy setup
+- `lua/plugins/` — custom plugin specs (auto-loaded); `example.lua` is a disabled reference
+- `lazyvim.json` — enabled LazyVim extras (edit via `:LazyExtras`)
+- `lazy-lock.json` — plugin lockfile (commit after `:Lazy update`)
