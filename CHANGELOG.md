@@ -2,7 +2,7 @@
 
 All notable changes to this Neovim configuration will be documented here.
 
-## 🌿 Latest
+## 16-03-2026
 ### ⚙️ CI
 - Add changelog workflow, dependabot, and auto-merge
 - Add stylua lint workflow
