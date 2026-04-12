@@ -1,4 +1,5 @@
 return {
+  -- Go tooling beyond LazyVim's built-in lang.go extra
   {
     "ray-x/go.nvim",
     dependencies = {

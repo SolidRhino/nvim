@@ -1,4 +1,5 @@
 return {
+  -- Blade filetype detection and treesitter support
   {
     "nvim-treesitter/nvim-treesitter",
     init = function()

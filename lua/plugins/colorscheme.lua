@@ -1,4 +1,5 @@
 return {
+  -- Catppuccin as the main colorscheme
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -8,6 +9,8 @@ return {
       term_colors = true,
     },
   },
+
+  -- Tell LazyVim which colorscheme to load
   {
     "LazyVim/LazyVim",
     opts = {

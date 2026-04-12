@@ -1,4 +1,5 @@
 return {
+  -- Laravel workflow helpers
   {
     "adalessa/laravel.nvim",
     dependencies = {
@@ -6,9 +7,9 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-neotest/nvim-nio",
     },
-    ft = { "php", "blade" },
     event = "BufEnter composer.json",
     cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+    ft = { "php", "blade" },
     keys = {
       {
         "<leader>la",
@@ -35,6 +36,16 @@ return {
     opts = {
       pickers = {
         provider = "snacks",
+      },
+    },
+  },
+
+  {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = {
+      spec = {
+        { "<leader>l", group = "Laravel" },
       },
     },
   },
