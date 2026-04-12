@@ -5,6 +5,7 @@ All notable changes to this Neovim configuration will be documented here.
 ## 🌿 Latest
 ### 📚 Documentation
 - Consolidate repo instructions into AGENTS
+- Refine AGENTS verification notes
 
 ### 📝 Other Changes
 - Merge pull request #1 from SolidRhino/dependabot/github_actions/JohnnyMorganz/stylua-action-5
