@@ -7,6 +7,16 @@ return {
     opts = {
       flavour = "mocha",
       term_colors = true,
+      integrations = {
+        blink_cmp = { style = "bordered" },
+        diffview = true,
+        gitsigns = true,
+        mini = { enabled = true },
+        render_markdown = true,
+        snacks = { enabled = true },
+        ufo = true,
+        which_key = true,
+      },
     },
   },
 

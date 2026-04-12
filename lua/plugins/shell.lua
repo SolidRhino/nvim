@@ -10,14 +10,16 @@ return {
   },
 
   -- Enable fish-lsp (must be installed manually: npm install -g fish-lsp)
-  -- nvim-lspconfig ships a complete fish_lsp definition (cmd, filetypes, root_dir)
-  -- Guard against missing binary to avoid noisy errors
+  -- nvim-lspconfig ships a complete fish_lsp definition; hook it into LazyVim's normal LSP path.
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      if vim.fn.executable("fish-lsp") == 1 then
-        vim.lsp.enable("fish_lsp")
-      end
+    opts = function(_, opts)
+      opts.servers = opts.servers or {}
+      opts.servers.fish_lsp = vim.tbl_deep_extend("force", opts.servers.fish_lsp or {}, {
+        enabled = vim.fn.executable("fish-lsp") == 1,
+        mason = false,
+      })
+      return opts
     end,
   },
 }

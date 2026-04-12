@@ -5,7 +5,7 @@ return {
     version = "*",
     keys = {
       {
-        "<leader>aa",
+        "<leader>oa",
         function()
           require("opencode").toggle()
         end,
@@ -13,7 +13,7 @@ return {
         desc = "Toggle",
       },
       {
-        "<leader>as",
+        "<leader>os",
         function()
           require("opencode").select()
         end,
@@ -21,7 +21,7 @@ return {
         desc = "Select Action",
       },
       {
-        "<leader>ai",
+        "<leader>oi",
         function()
           require("opencode").ask("", { submit = true })
         end,
@@ -29,7 +29,7 @@ return {
         desc = "Ask",
       },
       {
-        "<leader>aI",
+        "<leader>oI",
         function()
           require("opencode").ask("@this: ", { submit = true })
         end,
@@ -37,7 +37,7 @@ return {
         desc = "Ask with Context",
       },
       {
-        "<leader>ab",
+        "<leader>ob",
         function()
           require("opencode").ask("@buffer: ", { submit = true })
         end,
@@ -45,7 +45,7 @@ return {
         desc = "Ask about Buffer",
       },
       {
-        "<leader>apd",
+        "<leader>opd",
         function()
           require("opencode").prompt("diagnostics", { submit = true })
         end,
@@ -53,7 +53,7 @@ return {
         desc = "Diagnostics",
       },
       {
-        "<leader>ape",
+        "<leader>ope",
         function()
           require("opencode").prompt("explain", { submit = true })
         end,
@@ -61,7 +61,7 @@ return {
         desc = "Explain",
       },
       {
-        "<leader>apf",
+        "<leader>opf",
         function()
           require("opencode").prompt("fix", { submit = true })
         end,
@@ -69,7 +69,7 @@ return {
         desc = "Fix",
       },
       {
-        "<leader>apo",
+        "<leader>opo",
         function()
           require("opencode").prompt("optimize", { submit = true })
         end,
@@ -77,7 +77,7 @@ return {
         desc = "Optimize",
       },
       {
-        "<leader>apr",
+        "<leader>opr",
         function()
           require("opencode").prompt("review", { submit = true })
         end,
@@ -85,7 +85,7 @@ return {
         desc = "Review",
       },
       {
-        "<leader>apt",
+        "<leader>opt",
         function()
           require("opencode").prompt("test", { submit = true })
         end,
@@ -93,7 +93,7 @@ return {
         desc = "Test",
       },
       {
-        "<leader>ao",
+        "<leader>oo",
         function()
           return require("opencode").operator("@this ")
         end,
@@ -102,7 +102,7 @@ return {
         desc = "Add Range to OpenCode",
       },
       {
-        "<leader>aO",
+        "<leader>oO",
         function()
           return require("opencode").operator("@this ") .. "_"
         end,
@@ -151,8 +151,8 @@ return {
     optional = true,
     opts = {
       spec = {
-        { "<leader>a", mode = { "n", "x" }, group = "OpenCode" },
-        { "<leader>ap", mode = { "n", "x" }, group = "Prompt" },
+        { "<leader>o", mode = { "n", "x" }, group = "OpenCode" },
+        { "<leader>op", mode = { "n", "x" }, group = "Prompt" },
       },
     },
   },
