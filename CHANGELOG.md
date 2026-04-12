@@ -2,6 +2,22 @@
 
 All notable changes to this Neovim configuration will be documented here.
 
+## 🌿 Latest
+### 📚 Documentation
+- Consolidate repo instructions into AGENTS
+
+### 📝 Other Changes
+- Merge pull request #1 from SolidRhino/dependabot/github_actions/JohnnyMorganz/stylua-action-5
+
+chore(deps): bump JohnnyMorganz/stylua-action from 4 to 5
+
+### 🔧 Miscellaneous
+- **deps:** Bump JohnnyMorganz/stylua-action from 4 to 5
+- Harden config checks and streamline plugin setup
+
+### 🚀 Features
+- Add opencode workflows and polish plugin specs
+
 ## 16-03-2026
 ### ⚙️ CI
 - Add changelog workflow, dependabot, and auto-merge
