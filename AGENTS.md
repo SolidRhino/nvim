@@ -14,13 +14,14 @@
 - To fix formatting:
   - `~/.local/share/nvim/mason/bin/stylua init.lua lua/`
 - `stylua` is expected at the Mason path above; do not assume it is on `PATH`.
+- CI downloads `selene` ad hoc; do not assume it is installed locally.
 - `:checkhealth nvim_config` covers the manual integrations in this repo (`opencode`, `fish-lsp`, Blade queries/parser).
 
 ## Repo-specific workflow gotchas
 - `lua/config/lazy.lua` sets `defaults.lazy = false`, so custom plugin specs are startup-loaded unless you add `event`, `cmd`, or `ft` yourself.
 - `lua/config/options.lua` prepends `~/.local/share/mise/shims` to Neovim's `PATH`; editor-launched tools may resolve differently than shell-launched ones.
 - Edit LazyVim extras via `:LazyExtras`; that updates `lazyvim.json`.
-- After `:Lazy update`, commit `lazy-lock.json`.
+- After `:Lazy update` or `:Lazy sync`, commit `lazy-lock.json`.
 - `CHANGELOG.md` is generated from `cliff.toml` by CI; do not hand-edit it unless you are intentionally regenerating it with `git-cliff -o CHANGELOG.md`.
 - Pushes to `main` regenerate `CHANGELOG.md`; breaking conventional commits (`feat!:` / `fix!:` etc.) also trigger date tags.
 
