@@ -2,7 +2,7 @@
 
 All notable changes to this Neovim configuration will be documented here.
 
-## 🌿 Latest
+## 13-04-2026
 ### 📚 Documentation
 - Consolidate repo instructions into AGENTS
 - Refine AGENTS verification notes
