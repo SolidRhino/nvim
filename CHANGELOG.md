@@ -2,6 +2,15 @@
 
 All notable changes to this Neovim configuration will be documented here.
 
+## 22-06-2026
+### 📝 Other Changes
+- Merge pull request #2 from SolidRhino/dependabot/github_actions/actions/checkout-7
+
+chore(deps): bump actions/checkout from 6 to 7
+
+### 🔧 Miscellaneous
+- **deps:** Bump actions/checkout from 6 to 7
+
 ## 13-04-2026
 ### 📚 Documentation
 - Consolidate repo instructions into AGENTS
